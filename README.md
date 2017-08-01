@@ -23,3 +23,10 @@ provide it by yourself. Please download the [VtigerCRM](https://sourceforge.net/
 Docker-Compose also starts the MySQL container. You can customize your DB connection parameters in the `docker-compose.yml` file.
 
 **NOTE**: Please, note that you'll have to adjust you vtiger `config.inc.php` file and set the proper values to connect to the database, and so on. In the near future we will implement the neccesary changes in the docker's entrypoint script, so you won't have to do any manual changes in the crm files.
+
+## Running
+
+To launch the containers simply execute:
+```
+docker-compose up -d
+```
