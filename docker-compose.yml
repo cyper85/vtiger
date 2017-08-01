@@ -1,0 +1,24 @@
+---
+version: "2.0"
+services:
+  vtiger:
+    image: imaghonet/vtiger:latest
+    container_name: vtiger
+    ports:
+      - 8777:80
+    links:
+      - vtiger_db:mysql
+    volumes:
+      - /home/s4ros/vm/docker/vtiger/vtiger:/vtiger
+
+  vtiger_db:
+    image: mysql:5.5
+    container_name: vtiger_db
+    environment:
+      MYSQL_DATABASE: "vtiger"
+      MYSQL_USER: "vtiger"
+      MYSQL_PASSWORD: "vtiger"
+    volumes:
+      - /home/s4ros/vm/docker/vtiger/vtiger_db:/var/lib/mysql
+    expose:
+      - 3306
