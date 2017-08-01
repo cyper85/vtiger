@@ -9,7 +9,7 @@ services:
     links:
       - vtiger_db:mysql
     volumes:
-      - /home/s4ros/vm/docker/vtiger/vtiger:/vtiger
+      - /your/path/to/vtiger/files:/vtiger
 
   vtiger_db:
     image: mysql:5.5
@@ -19,6 +19,6 @@ services:
       MYSQL_USER: "vtiger"
       MYSQL_PASSWORD: "vtiger"
     volumes:
-      - /home/s4ros/vm/docker/vtiger/vtiger_db:/var/lib/mysql
+      - /your/path/to/vtiger_db:/var/lib/mysql
     expose:
       - 3306
